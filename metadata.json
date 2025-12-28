@@ -1,0 +1,7 @@
+{
+  "name": "RUPIVO",
+  "description": "Smart Personal Loans - Bank-grade trust at app speed. A secure, uncluttered experience for finding the best RBI-regulated lenders.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
