@@ -18,15 +18,15 @@ const Splash = () => {
   return (
     <div className="h-screen w-full bg-rupivo-primary flex flex-col items-center justify-center text-white relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-blue-800 to-transparent opacity-50"></div>
-      
+
       <div className="relative z-10 flex flex-col items-center animate-fade-in-up">
         <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-2xl shadow-blue-900/50">
-           <span className="text-4xl font-display font-bold text-rupivo-primary">R</span>
+          <span className="text-4xl font-display font-bold text-rupivo-primary">R</span>
         </div>
         <h1 className="text-4xl font-display font-bold tracking-tight mb-2">RUPIVO</h1>
         <p className="text-blue-200 text-sm font-medium tracking-wide">SMART PERSONAL LOANS</p>
       </div>
-      
+
       <div className="absolute bottom-10 text-xs text-blue-300/60">
         Bank-grade Security • RBI Regulated
       </div>
@@ -59,10 +59,10 @@ const Login = () => {
 
       {!otpSent ? (
         <div className="space-y-6">
-          <Input 
-            label="Mobile Number" 
-            placeholder="98765 43210" 
-            type="tel" 
+          <Input
+            label="Mobile Number"
+            placeholder="98765 43210"
+            type="tel"
             maxLength={10}
             value={mobile}
             onChange={(e) => setMobile(e.target.value.replace(/\D/g, ''))}
@@ -76,7 +76,7 @@ const Login = () => {
               <label className="block text-sm font-medium text-slate-700 ml-1">Enter OTP</label>
               <button className="text-xs text-rupivo-accent font-medium" onClick={() => setOtpSent(false)}>Edit Number</button>
             </div>
-            <input 
+            <input
               className="w-full px-4 py-3 rounded-xl border border-slate-200 text-center text-2xl tracking-widest font-bold focus:outline-none focus:ring-2 focus:ring-rupivo-accent"
               placeholder="••••"
               maxLength={4}
@@ -121,19 +121,19 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Splash />} />
         <Route path="/login" element={<Login />} />
-        
+
         {/* Onboarding Flow */}
         <Route path="/profile-basic" element={<BasicProfile user={user} updateUser={updateUser} />} />
         <Route path="/work-details" element={<WorkDetails user={user} updateUser={updateUser} />} />
         <Route path="/credit-consent" element={<CreditConsent />} />
-        
+
         {/* Loan Flow */}
         <Route path="/processing" element={<Processing />} />
         <Route path="/offers" element={<Offers />} />
         <Route path="/offer-details" element={<OfferDetails />} />
         <Route path="/documents" element={<Documents user={user} updateUser={updateUser} />} />
         <Route path="/handoff" element={<Handoff />} />
-        
+
         {/* Dashboard */}
         <Route path="/dashboard" element={<DashboardHome />} />
         <Route path="/credit-health" element={<CreditHealthScreen />} />
